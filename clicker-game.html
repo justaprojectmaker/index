@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>JustAProjectMaker's Clicker Game</title>
+        <style>
+        * {
+         text-shadow: 5px 5px 5px black; 
+        }
+            html{
+    width:90%;
+    max-width:100%;
+    user-select: none;
+    background-image:url("https://cdn2.scratch.mit.edu/get_image/project/1288587752_1000x800.png");
+    background-size: 100vw 100vh;
+    background-repeat: repeat;
+    -webkit-text-stroke-width:0.5px;
+    -webkit-text-stroke-color:white;
+    font-family:"SN Pro", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.button{
+    width:30vw;
+    text-align:center;
+    display:flex;
+    align-items: center;
+    font-size:1.4em;
+    border-radius:50px;
+    height:10vh;
+    filter:drop-shadow(3px 3px 3px black);
+    background-color:blue;
+    color:aquamarine;
+}
+.topleft{
+ top: 5;
+ left: 5;
+}
+.button:hover{
+    color:white;
+    background-color:black;
+
+}
+.center{
+    display:flex;
+    text-align:center;
+    justify-content: center;
+}
+.hover{
+    margin: auto;
+    transform:scale(1);
+    transition: transform 0.5s ease, background-color 0.5s ease, color 0.5s ease;
+}
+.hover:hover{
+    transform:scale(1.2);
+}
+img{
+    width:300px;
+}
+        </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=SN+Pro:ital,wght@1,900&display=swap" rel="stylesheet">
+        <link rel="icon" href="https://miro.medium.com/1*obJ8V-qq2UT0td_gv2sVgA.jpeg">
+        <title><p style='height:5em;background-color:black;color:black;'>JustAProjectMaker</p>'s Clicker Game (2026, 5A)</title>
+    </head>
+    <body>
+    <button class='button hover center' style='height:3em;width:10em;position:absolute;right:10%;top:10%;float:right;' onclick='start()'><span id='t'>Start</span></button>
+    <h2 class='topleft' style='height:3em;width:18em;font-size:1.5em;position:absolute;top:10%'>Instructions: Click on the blue "Start" button to begin, click on the computer to gain points, and click on the button below to get upgrades. Have fun!</h2>
+        <h1 class="center" style="font-size:2em;height:1.5em;"><ruby>JustAProjectMaker's Clicker Game<rp>(</rp><rt>djust uh project maykr</rt><rp>)</rp></ruby></h1>
+        <img src="https://miro.medium.com/1*obJ8V-qq2UT0td_gv2sVgA.jpeg" alt='Laptop. Click me!' style='width:250px' class="hover center" onclick="change(ePPC);">
+        <br>
+        <h2 style="font-size:3em;height:1.2em;text-align:center;position:absolute;left:0%;top:70%;"><span id="mistake" style="color:red;font-size:2em;">0</span> points</h2>
+        <br>
+        <p class="topleft" style="font-size:2em;height:0.5em;">Time: <span id="time"><u>not started</u></span></p>
+    <p class='topleft' style='font-size:2em;height:0.5em'>High score: <span id='high'>0</span> points</p>
+        <br>
+        <button onclick="ifPPC();" class="button hover center" style='height:3em' id="points"><span id='point'>50</span><span style='width:0.25em'></span>points for<span style='width:0.25em'></span><span id="ppc">4</span><span style='width:0.25em'></span>PPC</button>
+<script>
+ePPC = 2
+list=[]
+max=0
+mode=0
+s=0
+err=`Click on the 'Start' or 'Restart' button to begin.`
+f=function(){const time=Date.now()-other;s=180-Math.floor(parseInt(time)/1000);content=`${s>0?s:0} seconds left`;document.getElementById("time").textContent=content}
+            getId=i=>document.getElementById(i)
+change=amt=>{if(s>0){getId("mistake").textContent=parseInt(getId("mistake").textContent)+parseInt(amt);list=[...list,parseInt(getId("mistake").textContent)];max=Math.max(...list);getId('high').textContent=max}else{alert(err)}}
+other=0
+mods=['Stop','Restart']
+start=()=>{getId('t').innerText=mods[mode];mode++;mode%=2;if(mode==1){getId('ppc').innerText=4;getId('point').innerText=50;ePPC=1;getId("mistake").textContent=0;other=Date.now();f();int=setInterval(f,1000)}else{clearInterval(int);s=0};}
+interval=[setInterval(function(){str=str.substring(1)+str.charAt(0);document.title=str},500)]
+str="JustAProjectMaker's Clicker Game | "
+ifPPC=()=>{
+    if(s>0){
+    cost = Number(getId('point').innerText)
+    reward = Number(getId('ppc').innerText)
+    psf = Number(getId('mistake').innerText)
+    if(psf>=cost){
+        getId('mistake').innerText = Math.round(Number(psf-cost))
+        ePPC = Number(getId('ppc').innerText)
+        getId('ppc').innerText = Math.round(Number(cost)/5)
+        getId('point').innerText = ePPC+Math.round(Number(cost)*2.5)
+    }
+    }else{ 
+      alert(err)
+    }
+}
+        </script>
+        <h2 style='font-size:22px;position:absolute;top:30%;right:5%;width:20em'>I will tell you the reasoning behind this game.
+        I wanted something simple to make that I already created before (except I didn't show it,) and that I would actually play for at least a minute. I was also committed to showing off my skills in CSS (cascading stylesheets) and HTML (hypertext markup language.) I am very excited to show this to my classmates!</h2>
+        <h3 style='position:absolute;top:30%'>Also, if you have my email, please tell me your high-score!</h3>
+        </body>
+</html>
