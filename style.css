@@ -7,7 +7,7 @@
 	border:none;
 	transition:transform 0.3s ease-in-out;
 	background:dodgerblue;
-	box-shadow:10px 10px 10px dodgerblue;
+	box-shadow:0px 0px 10px dodgerblue;
 }
 .button:hover{
 	transform:scale(1.1);
