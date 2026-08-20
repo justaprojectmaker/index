@@ -1,8 +1,14 @@
-
-      button{
-		border-radius:10px;
-		height:20vw;
-		width:40vw;
-		font-size:20vw;
-		font-weight:700;
-	  }
+.button{
+	border-radius:10px;
+	height:20vw;
+	width:40vw;
+	font-size:80px;
+	font-weight:700;
+	border:none;
+	transition:transform 0.3s ease-in-out;
+	background:dodgerblue;
+	box-shadow:10px 10px 10px dodgerblue;
+}
+.button::hover{
+	transform:scale(1.1);
+}
