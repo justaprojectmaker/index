@@ -13,6 +13,9 @@
 	transform:scale(1.1);
 }
 #webdiv{
+	display:grid;
 background-color:red;
 border-radius:50px;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: auto;
 }
