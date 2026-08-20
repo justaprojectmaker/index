@@ -9,6 +9,6 @@
 	background:dodgerblue;
 	box-shadow:10px 10px 10px dodgerblue;
 }
-.button::hover{
+.button:hover{
 	transform:scale(1.1);
 }
