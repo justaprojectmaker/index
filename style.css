@@ -14,7 +14,8 @@
 }
 #webdiv{
 	display:grid;
-background-color:red;
+background-color:blue;
+	padding:20px;
 border-radius:50px;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: auto;
